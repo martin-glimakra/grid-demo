@@ -2,60 +2,59 @@
     display: grid;
     background-color: bisque;
     height: 500px;
-    grid-template-areas:  "h mn ."
+    grid-template-areas:  "l mn ."
                           "m m m"
                           "f f f";
   }
-  
-  #page header {
-    grid-area: h;
-    background-color: #8ca0ff;
-  }
-  
-  #page .mobile-navigation {
-    grid-area: mn;
-    background-color: #ffa08c;
+
+  .logo {
+    background-color: blueviolet;
+    grid-area: l;
   }
 
-  #page .desktop-navigation {
-    grid-area: dn;
-    background-color: darkmagenta;
+  .desktop-navigation {
+    background-color: brown;
     display: none;
   }
-  
-  #page main {
-    grid-area: m;
-    background-color: #ffff64;
-  }
-  
-  #page footer {
-    grid-area: f;
-    background-color: #8cffa0;
+
+  .mobile-navigation {
+    background-color: chartreuse;
+    grid-area: mn;
   }
 
-  .test-mediaquery {
-    background-color: blue;
+  .main {
+    background-color: coral;
+    grid-area: m;
+  }
+
+  .footer {
+    background-color: cyan;
+    grid-area: f;
+  }
+
+  .test-media-query {
+    background-color: darkblue;
   }
 
   @media only screen and (min-width: 600px) {
-    .test-mediaquery {
+    .test-media-query {
       background-color: red;
     }
 
-    #page {
-      grid-template-areas:  "h h dn"
-                            ". m ."
-                            ". m ."
-                            "f f f";
+    .desktop-navigation {
+      display: block;
+      grid-area: dn;
+
     }
-    #page .mobile-navigation {
+
+    .mobile-navigation {
       display: none;
     }
 
-    #page .desktop-navigation {
-      display: block;
+    #page {
+      grid-template-areas:  "l . . dn"
+                            ". m m ."
+                            ". m m ."
+                            "f f f f";
     }
-
-
-  
   }
